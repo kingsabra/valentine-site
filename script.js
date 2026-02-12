@@ -3,6 +3,7 @@ const noBtn = document.getElementById("noBtn");
 const btnRow = document.getElementById("btnRow");
 const result = document.getElementById("result");
 const title = document.getElementById("title");
+const card = document.getElementById("card");
 
 let noIsAbsolute = false;
 
@@ -10,7 +11,6 @@ function moveNoButton() {
   const area = btnRow.getBoundingClientRect();
   const btn = noBtn.getBoundingClientRect();
 
-  // first time: switch to absolute so we can freely move it
   if (!noIsAbsolute) {
     noIsAbsolute = true;
     noBtn.style.position = "absolute";
@@ -27,13 +27,17 @@ function moveNoButton() {
   noBtn.style.top  = `${top}px`;
 }
 
-// Make it dodge on hover AND on click/tap
 noBtn.addEventListener("mouseenter", moveNoButton);
 noBtn.addEventListener("click", (e) => { e.preventDefault(); moveNoButton(); });
 
-// Yes -> reveal screen + your custom image
 yesBtn.addEventListener("click", () => {
-  title.textContent = "okayy 🥰";
+  // change text
+  title.textContent = "Ro7y Men Gowa we 7ayaty Kolaha";
+
+  // expand the white card
+  card.classList.add("expanded");
+
+  // show result
   btnRow.hidden = true;
   result.hidden = false;
 });
