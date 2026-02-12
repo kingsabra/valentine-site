@@ -21,10 +21,9 @@ body {
   box-shadow: 0 18px 50px rgba(0,0,0,0.18);
   position: relative;
   overflow: hidden;
-  transition: width 250ms ease, padding 250ms ease;
+  transition: width 240ms ease, padding 240ms ease;
 }
 
-/* When YES is clicked, we expand the white rectangle */
 .card.expanded{
   width: min(980px, 96vw);
   padding: 26px 22px 28px;
@@ -50,16 +49,19 @@ h1{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
-  position: relative;
+  position: relative; /* allows absolute positioning of the No button */
+  min-height: 56px;   /* important so the area exists for random movement */
 }
 
 .btn{
   border: 0;
   padding: 12px 14px;
   border-radius: 999px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   font-size: 16px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .yes{ background: #e11d48; color: white; }
@@ -79,7 +81,6 @@ h1{
 .yayTitle{ margin: 0 0 6px; }
 .yaySub{ margin: 0 0 14px; }
 
-/* NEW: photo + video side-by-side */
 .mediaGrid{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -87,10 +88,9 @@ h1{
   align-items: stretch;
 }
 
-/* stack on mobile */
 @media (max-width: 820px){
   .mediaGrid{ grid-template-columns: 1fr; }
-  .card.expanded{ width: min(560px, 92vw); } /* keep it comfy on mobile */
+  .card.expanded{ width: min(560px, 92vw); }
 }
 
 .mediaCard{
@@ -102,7 +102,6 @@ h1{
   min-height: 320px;
 }
 
-/* image */
 .mediaCard img{
   width: 100%;
   height: 100%;
@@ -111,7 +110,10 @@ h1{
   display: block;
 }
 
-/* video */
+.videoCard{
+  position: relative;
+}
+
 .videoCard video{
   width: 100%;
   height: 100%;
@@ -119,4 +121,16 @@ h1{
   max-height: 520px;
   object-fit: cover;
   display: block;
+  background: #000;
+}
+
+.videoFallback{
+  position: absolute;
+  inset: auto 10px 10px 10px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 12px;
+  display: none;
 }

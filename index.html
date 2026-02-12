@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Will you be my Valentine?</title>
+  <title>Valentine 💘</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,11 +15,33 @@
       </div>
 
       <div class="btnRow" id="btnRow">
-        <button class="btn yes" id="yesBtn">Yes</button>
-        <button class="btn no" id="noBtn">No</button>
+        <button class="btn yes" id="yesBtn" type="button">Yes</button>
+        <button class="btn no" id="noBtn" type="button">No</button>
       </div>
 
-      <!-- YES RESULT -->
       <div class="result" id="result" hidden>
         <h2 class="yayTitle">YAY! 🎉</h2>
         <p class="yaySub">I can’t wait to see you ❤️</p>
+
+        <div class="mediaGrid">
+          <div class="mediaCard">
+            <img id="yesImg" src="assets/yes.jpg" alt="Us" />
+          </div>
+
+          <div class="mediaCard videoCard">
+            <video id="yesVideo" controls playsinline preload="metadata">
+              <source src="assets/valentine.mp4" type="video/mp4" />
+            </video>
+            <div class="videoFallback">
+              If the video doesn’t show, make sure the file is at <b>assets/valentine.mp4</b>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- IMPORTANT: keep this at the bottom so elements exist before JS runs -->
+  <script src="script.js"></script>
+</body>
+</html>
