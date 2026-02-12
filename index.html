@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valentine 💘</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Prevent favicon 404 -->
+  <link rel="icon" href="data:,">
 </head>
 <body>
   <main class="stage">
     <section class="card" id="card">
+
       <div class="header">
         <div class="bear">🐻‍❄️</div>
         <h1 id="title">will you be my valentine?</h1>
@@ -19,29 +22,29 @@
         <button class="btn no" id="noBtn" type="button">No</button>
       </div>
 
+      <!-- RESULT -->
       <div class="result" id="result" hidden>
         <h2 class="yayTitle">YAY! 🎉</h2>
         <p class="yaySub">I can’t wait to see you ❤️</p>
 
         <div class="mediaGrid">
+          <!-- IMAGE -->
           <div class="mediaCard">
-            <img id="yesImg" src="assets/yes.jpg" alt="Us" />
+            <img src="assets/yes.png" alt="Us" />
           </div>
 
+          <!-- VIDEO -->
           <div class="mediaCard videoCard">
-            <video id="yesVideo" controls playsinline preload="metadata">
+            <video controls playsinline preload="metadata">
               <source src="assets/valentine.mp4" type="video/mp4" />
             </video>
-            <div class="videoFallback">
-              If the video doesn’t show, make sure the file is at <b>assets/valentine.mp4</b>.
-            </div>
           </div>
         </div>
       </div>
+
     </section>
   </main>
 
-  <!-- IMPORTANT: keep this at the bottom so elements exist before JS runs -->
   <script src="script.js"></script>
 </body>
 </html>
