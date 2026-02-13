@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnRow = document.getElementById("btnRow");
   const result = document.getElementById("result");
   const title = document.getElementById("title");
-  const card = document.getElementById("card");
 
   let noIsAbsolute = false;
 
@@ -32,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   yesBtn.addEventListener("click", () => {
     title.textContent = "Ro7y Men Gowa we 7ayaty Kolaha";
-    card.classList.add("expanded");
     btnRow.hidden = true;
     result.hidden = false;
   });
